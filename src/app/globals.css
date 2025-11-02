@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #022c43;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn_ {
+  @apply border text-[#c9ab04] uppercase tracking-[4px] transition-all duration-500 px-8 py-2 border-solid border-[#c9ab04] hover:text-black hover:bg-[#c9ab04] hover:font-medium hover:rounded-[3rem];
+  background: none;
+}
+.btn_ .btn_icon {
+  @apply transition-all duration-300;
+}
+.btn_:hover .btn_icon {
+  @apply ml-4;
+}
+
+.main_heading_title {
+  @apply text-white text-[3.5rem] font-bold leading-none mb-2;
+}
+
+.blast {
+  color: orange;
+  cursor: default;
+}
+.rabber_band:hover {
+  color: white;
+}
+.rabber_band {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  display: inline-block;
+  animation-name: rubberBand;
+}
+
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
