@@ -2,11 +2,14 @@ import { SendHorizontal } from "lucide-react";
 import Button from "./components/ui/Button";
 import images from "./Assets/ImagesUrls";
 import TitleEffect from "./components/TitleEffect";
+import Image from "next/image";
+import BlurryNavBar from "./components/Navbar/Navbar";
 
 export default function Home() {
   return (
     <section className="w-full min-h-screen h-screen flex justify-evenly items-center bg-[#022c43] overflow-y-auto px-[5%] py-0">
-      <div className="left_side">
+      <BlurryNavBar/>
+      <div className="w-1/2">
         <TitleEffect className="mb-2" h1="" title="Hi," />
         <div className="flex">
           <TitleEffect h1="" title="I'm" />
@@ -31,9 +34,9 @@ export default function Home() {
           />
         </Button>
       </div>
-      <div className="right_side">
+      <div className="w-1/2">
         <div className="right_side_logo">
-          <img className="" src={images.logo} alt="logo" />
+          <Image className="w-full h-full" src={images.logo} alt="logo"  width={400} height={400}/>
         </div>
       </div>
     </section>
