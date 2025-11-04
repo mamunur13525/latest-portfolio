@@ -38,7 +38,7 @@ body {
 }
 
 .btn_ {
-  @apply border uppercase tracking-[4px] transition-all duration-500 px-8 py-2 border-solid border-[#c9ab04] hover:text-black bg-none;
+  @apply border uppercase tracking-[4px] transition-all duration-500 px-8 py-2 border-solid border-[#c9ab04] hover:text-black hover:bg-[#c9ab04];
 }
 
 .btn_ .btn_icon {
@@ -64,6 +64,12 @@ p.about_text {
 .skill_name {
   @apply text-[#f1c40f] font-medium mr-[0.8rem];
 }
+
+
+input.input_form, textarea.input_form {
+  @apply w-full text-[white] p-[0.7rem] border-[none] bg-[#115173];
+}
+
 
 .blast {
   color: orange;

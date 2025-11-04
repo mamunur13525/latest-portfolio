@@ -2,6 +2,8 @@ import HomePage from "./components/pages/Home";
 import About from "./components/pages/About";
 import Skills from "./components/pages/Skills";
 import Blogs from "./components/pages/blogs";
+import Projects from "./components/pages/projects/index";
+import ContactUs from "./components/pages/contact";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <About />
       <Skills />
       <Blogs />
+      <Projects/>
+      <ContactUs/>
     </section>
   );
 }
