@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-la-belle-aurore: 'La Belle Aurore', cursive;
+  --font-popping: 'Poppins', sans-serif;
 }
 
 @theme inline {
@@ -25,13 +29,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.btn_ {
-  @apply border text-[#c9ab04] uppercase tracking-[4px] transition-all duration-500 px-8 py-2 border-solid border-[#c9ab04] hover:text-black hover:bg-[#c9ab04] hover:font-medium hover:rounded-[3rem];
-  background: none;
+.font-labelle {
+  font-family: var(--font-la-belle-aurore) !important;
 }
+
+.font-popping {
+  font-family: var(--font-popping) !important;
+}
+
+.btn_ {
+  @apply border uppercase tracking-[4px] transition-all duration-500 px-8 py-2 border-solid border-[#c9ab04] hover:text-black bg-none;
+}
+
 .btn_ .btn_icon {
   @apply transition-all duration-300;
 }
+
 .btn_:hover .btn_icon {
   @apply ml-4;
 }
@@ -40,13 +53,27 @@ body {
   @apply text-white text-[3.5rem] font-bold leading-none mb-2;
 }
 
+.heading_helper_text {
+  @apply text-[#947f0a] text-[1.3rem] font-normal;
+}
+
+p.about_text {
+  @apply text-white font-normal text-[1.1rem] text-start tracking-[1px];
+}
+
+.skill_name {
+  @apply text-[#f1c40f] font-medium mr-[0.8rem];
+}
+
 .blast {
   color: orange;
   cursor: default;
 }
+
 .rabber_band:hover {
   color: white;
 }
+
 .rabber_band {
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -84,4 +111,3 @@ body {
     transform: scale3d(1, 1, 1);
   }
 }
-

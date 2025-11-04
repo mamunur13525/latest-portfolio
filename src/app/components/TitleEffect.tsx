@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+import React, { ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface Props {
   className?: string;
   title: string;
-  h1?: string;
+  h1?: string | ReactElement;
 }
 // Define the correct event type for the handler
 type MouseEnterHandler = React.MouseEvent<HTMLSpanElement>;
@@ -21,21 +21,17 @@ const TitleEffect = ({ className = "", title = "", h1 = "" }: Props) => {
   };
 
   return (
-    <h1 className={twMerge(`main_heading_title flex `, className)}>
-      {title.split("").map((item, index) => {
-        console.log({ item });
-        return (
-          <span
-            key={item + index}
-            onMouseEnter={(e) => handleMouseHoverEffect(e)}
-            className={"blast"}
-          >
-            {item}
-          </span>
-        );
-      })}
-      &nbsp;
-      {h1}
+    <h1 className={twMerge(`main_heading_title flex items-end`, className)}>
+      {title.split("").map((item, index) => (
+        <span
+          key={item + index}
+          onMouseEnter={(e) => handleMouseHoverEffect(e)}
+          className={"blast"}
+        >
+          {item}
+        </span>
+      ))}
+      <span className="heading_helper_text font-labelle"> {h1} </span>
     </h1>
   );
 };
