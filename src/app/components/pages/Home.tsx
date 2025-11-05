@@ -5,18 +5,18 @@ import TitleEffect from "../TitleEffect";
 import Button from "../ui/Button";
 import images from "@/app/Assets/ImagesUrls";
 
-export default function HomePage() {
+const Home = () => {
   return (
     <section className="w-full min-h-screen h-screen flex justify-evenly items-center bg-[#022c43] overflow-y-auto px-[5%] py-0">
-      <BlurryNavBar/>
+      <BlurryNavBar />
       <div className="w-1/2">
         <TitleEffect className="mb-2" h1="" title="Hi," />
-        <div className="flex">
+        <div className="flex gap-3">
           <TitleEffect h1="" title="I'm" />
           <TitleEffect h1="" title="Mamun" />
           <TitleEffect h1="" title="Ahmed," />
         </div>
-        <div className="flex">
+        <div className="flex gap-3">
           <TitleEffect h1="" title="Web" />
           <TitleEffect h1="" title="developer" />
         </div>
@@ -27,18 +27,22 @@ export default function HomePage() {
           Front End Developer / Javascript Expert / Freelancer
         </p>
         <Button className="mt-2 flex items-center gap-2 group">
-          <span className="text"> contact me</span>{" "}
-          <SendHorizontal
-            className="btn_icon group-hover:fill-black"
-            size={16}
-          />
+          <span className="tracking-widest"> contact me</span> <SendHorizontal size={16} />
         </Button>
       </div>
       <div className="w-1/2">
         <div className="right_side_logo">
-          <Image className="w-full h-full" src={images.logo} alt="logo"  width={400} height={400}/>
+          <Image
+            className="w-full h-full"
+            src={images.logo}
+            alt="logo"
+            width={400}
+            height={400}
+          />
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Home;

@@ -1,10 +1,12 @@
-import { Send } from "lucide-react";
+import { SendHorizontal } from "lucide-react";
 import React, { useState } from "react";
 import Button from "../../ui/Button";
 
 type InputFieldProps =
   | (React.TextareaHTMLAttributes<HTMLTextAreaElement> & { type: "textarea" })
-  | (React.InputHTMLAttributes<HTMLInputElement> & { type: "text" | "email" | "input" });
+  | (React.InputHTMLAttributes<HTMLInputElement> & {
+      type: "text" | "email" | "input";
+    });
 
 const InputField: React.FC<InputFieldProps> = ({ type, ...rest }) => {
   const [focused, setFocused] = useState(false);
@@ -25,7 +27,9 @@ const InputField: React.FC<InputFieldProps> = ({ type, ...rest }) => {
           onChange={(e) => setValue(e.target.value)}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className={`w-full h-36 bg-transparent outline-none border-none resize-none input_form ${rest.className || ""}`}
+          className={`w-full h-36 bg-transparent outline-none border-none resize-none input_form ${
+            rest.className || ""
+          }`}
         />
       ) : (
         <input
@@ -34,7 +38,9 @@ const InputField: React.FC<InputFieldProps> = ({ type, ...rest }) => {
           onChange={(e) => setValue(e.target.value)}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className={`w-full bg-transparent outline-none border-none input_form ${rest.className || ""}`}
+          className={`w-full bg-transparent outline-none border-none input_form ${
+            rest.className || ""
+          }`}
         />
       )}
     </div>
@@ -85,11 +91,9 @@ const ContactForm = () => {
         />
       </div>
 
-      <div className="flex justify-center ">
-        <Button>
-          <span className="text">Send</span> <Send className="btn_icon" />
-        </Button>
-      </div>
+      <Button className="mt-2 w-fit tracking-widest" type="submit">
+        <span className="text">Send</span> <SendHorizontal size={16} />
+      </Button>
     </form>
   );
 };

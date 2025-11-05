@@ -1,132 +1,44 @@
 "use client";
 
 import React from "react";
-import { v4 } from "uuid";
-import {
-  Cloud,
-  renderSimpleIcon,
-  fetchSimpleIcons,
-  SimpleIcon,
-} from "react-icon-cloud";
+import { Cloud, renderSimpleIcon, fetchSimpleIcons, SimpleIcon } from
+  "react-icon-cloud";
 
-const wordTags = [
-  {
-    id: 0,
-    title: "Typescript",
-  },
-  {
-    id: 1,
-    title: "Javascript",
-  },
-  {
-    id: 2,
-    title: "CSS3",
-  },
-  {
-    id: 3,
-    title: "HTML5",
-  },
-  {
-    id: 4,
-    title: "Node.js",
-  },
-  {
-    id: 5,
-    title: "Express.js",
-  },
-  {
-    id: 6,
-    title: "Figma",
-  },
-  {
-    id: 7,
-    title: "Visual-Studio-Code",
-  },
-  {
-    id: 8,
-    title: "Gitlab",
-  },
-  {
-    id: 9,
-    title: "Github",
-  },
-  {
-    id: 10,
-    title: "Jira",
-  },
-  {
-    id: 11,
-    title: "Git",
-  },
-  {
-    id: 12,
-    title: "Firebase",
-  },
-  {
-    id: 13,
-    title: "Redux",
-  },
-  {
-    id: 14,
-    title: "Typescript",
-  },
-  {
-    id: 15,
-    title: "Mongodb",
-  },
-  {
-    id: 16,
-    title: "SASS",
-  },
-  {
-    id: 17,
-    title: "Bootstrap",
-  },
-  {
-    id: 18,
-    title: "JQuery",
-  },
-  {
-    id: 19,
-    title: "Webpack",
-  },
-  {
-    id: 20,
-    title: "REST API",
-  },
-  {
-    id: 21,
-    title: "JSON",
-  },
-  {
-    id: 22,
-    title: "npm",
-  },
-  {
-    id: 23,
-    title: "ES5/ES6",
-  },
-];
+type IconsResponse = { simpleIcons: Record<string, SimpleIcon> };
 
 const useIcons = (slugs: string[]) => {
-  const [icons, setIcons] = React.useState();
+  const [icons, setIcons] = React.useState<IconsResponse | null>(null);
+
   React.useEffect(() => {
-    fetchSimpleIcons({ slugs }).then(setIcons);
-  }, []);
+    let mounted = true;
+    fetchSimpleIcons({ slugs }).then((res) => {
+      if (mounted) setIcons(res);
+    });
+    return () => {
+      mounted = false;
+    };
+  }, [slugs]);
 
-  if (icons) {
-    return Object.values(icons.simpleIcons).map((icon) =>
-      renderSimpleIcon({
-        icon,
-        size: 42,
-        aProps: {
-          onClick: (e: any) => e.preventDefault(),
-        },
-      })
-    );
-  }
+  // Return null while loading to avoid rendering different markup server vs client
+  if (!icons) return null;
 
-  return <a>Loading</a>;
+  // Preserve the order of `slugs` and attach stable keys to each element.
+  return slugs.map((slug) => {
+    const icon: SimpleIcon | undefined = icons.simpleIcons?.[slug];
+    if (!icon) return null;
+
+    const el = renderSimpleIcon({
+      icon,
+      size: 42,
+      aProps: {
+        onClick: (e: React.MouseEvent<HTMLAnchorElement>) =>
+          e.preventDefault(),
+      },
+    }) as React.ReactElement;
+
+    // Ensure each returned element has a stable key
+    return React.cloneElement(el, { key: slug });
+  });
 };
 const slugs = [
   "amazonaws",
@@ -141,7 +53,7 @@ const slugs = [
 const DynamicIconCloud = () => {
   const icons = useIcons(slugs);
 
-  return <Cloud>{icons}</Cloud>;
+  return <Cloud id="word">{icons}</Cloud>;
 };
 
 // const TagCanvus = () => {

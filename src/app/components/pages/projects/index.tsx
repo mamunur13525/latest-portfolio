@@ -78,7 +78,7 @@ const Projects = () => {
               <Project setVideoOn={setVideoOn} key={ind} item={item} />
             ))
           ) : (
-            <p>No Data Foud!</p>
+            <p className="text-white">No Data Foud!</p>
           )}
         </div>
       </div>

@@ -29,7 +29,7 @@ const Skills = () => {
           />
         </div>
 
-        <p className="about_text font-popping">
+        <div className="about_text text-white font-popping">
           Expert in front-end development including technologies like
           <div className="mb-4 font-popping">
             <span className="skill_name">HTML5 ,</span>
@@ -63,7 +63,7 @@ const Skills = () => {
             </Link>{" "}
             profile for more details or just contact me.
           </p>
-        </p>
+        </div>
         {/* <div className="body_tag bottom">
           <p className="body_text">&nbsp;&nbsp;&nbsp; &lt;/body&gt;</p>
           <p className="body_text">&lt;/html&gt;</p>

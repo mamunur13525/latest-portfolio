@@ -2,7 +2,7 @@ import TitleEffect from "../../TitleEffect";
 import Image from "next/image";
 import images from "@/app/Assets/ImagesUrls";
 
-const tipsItems = [
+const blogsItems = [
   {
     id: 0,
     name: "Javascript",
@@ -37,7 +37,7 @@ const tipsItems = [
 
 const Blogs = () => {
   return (
-    <div className="home_page_main tips">
+    <div>
       <div className="home_main_text pt-24 w-full">
         {/* <p className="h1_tag mt-5">&lt;h1&gt;</p> */}
         <div className="flex">
@@ -47,23 +47,23 @@ const Blogs = () => {
           />
           <TitleEffect
             h1={<span className="body_text ml-3">&lt;/h1&gt;</span>}
-            title="Tips"
+            title="Blogs"
           />
         </div>
         <div className="flex items-center gap-4 flex-wrap mt-5">
-          {tipsItems.map((tip) => (
+          {blogsItems.map((blog) => (
             <div
-              key={tip.id}
-              className="flex gap-2.5 flex-col items-center justify-center text-[white] w-[150px] h-[170px] cursor-pointer rounded-sm bg-[rgba(85,85,85,0.297)] text-center m-0 group "
+              key={blog.id}
+              className="flex gap-2.5 flex-col items-center justify-center text-[white] w-[150px] h-[170px] cursor-pointer rounded-sm bg-[rgba(85,85,85,0.297)] text-center m-0 group"
             >
-              <div className="w-[100px] aspect-4/4 overflow-hidden">
+              <div className="w-[100px] aspect-4/4 overflow-hidden group-hover:scale-120 transition-all duration-300">
                 <Image
                   className="w-full h-full object-center"
-                  src={tip.icon}
+                  src={blog.icon}
                   alt="js"
                 />
               </div>
-              <p>{tip.name}</p>
+              <p>{blog.name}</p>
             </div>
           ))}
         </div>
