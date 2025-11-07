@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../ui/Button";
 import Image from "next/image";
 import images from "@/app/Assets/ImagesUrls";
@@ -32,7 +32,7 @@ const BlurryNavBar = () => {
   return (
     <>
       <nav
-        className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 px-8 md:px-6 py-3 w-11/12 shadow-2xl shadow-indigo-900/50 bg-white/10 backdrop-blur-3xl transition-all duration-300 ${
+        className={`font-popping fixed top-6 left-1/2 transform -translate-x-1/2 z-50 px-8 md:px-6 py-3 w-11/12 lg:max-w-[1000px] shadow-2xl shadow-indigo-900/50 bg-[#ffa500]/5 backdrop-blur-3xl border border-[#ffa500]/10 transition-all duration-300 ${
           open ? "rounded-none" : "rounded-full"
         }`}
       >
@@ -55,7 +55,7 @@ const BlurryNavBar = () => {
               <li key={item.name}>
                 <a
                   href={item.href}
-                  className="text-white text-xs md:text-sm font-semibold px-2 py-1 md:px-3 md:py-1.5 rounded-full hover:bg-white/20 hover:text-cyan-300 active:bg-white/30 transition-all duration-200 block whitespace-nowrap"
+                  className="text-white text-xs md:text-sm  px-2 py-1 md:px-3 md:py-1.5 rounded-full hover:bg-white/20 hover:text-[#feb327] active:bg-white/30 transition-all duration-200 block whitespace-nowrap"
                 >
                   {item.name}
                 </a>
@@ -152,7 +152,7 @@ const BlurryNavBar = () => {
             {NAV_ITEMS.map((item, i) => (
               <li
                 key={item.name}
-                className="w-full text-center"
+                className="w-full text-center group duration-300"
                 style={{
                   transition: "transform 320ms ease, opacity 320ms ease",
                   transform: open ? "translateY(0)" : "translateY(-12px)",
@@ -164,7 +164,7 @@ const BlurryNavBar = () => {
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="w-full block text-white text-2xl font-medium px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
+                  className="w-full block text-white group-hover:text-[#ffa500] duration-300 text-2xl font-medium px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
                 >
                   {item.name}
                 </a>

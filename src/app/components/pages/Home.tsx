@@ -24,7 +24,7 @@ const Home = () => {
           className="text-[gray] tracking-[3px] text-base mt-[1.1rem];
   font-family: Arial, Helvetica, sans-serif; my-5"
         >
-          Front End Developer / Javascript Expert / Freelancer
+          Full Stack Developer / Javascript Expert / Freelancer
         </p>
         <Button className="mt-2 flex items-center gap-2 group">
           <span className="tracking-widest"> contact me</span> <SendHorizontal size={16} />
