@@ -7,16 +7,16 @@ import images from "@/app/Assets/ImagesUrls";
 
 const Home = () => {
   return (
-    <section className="w-full min-h-screen h-screen flex justify-evenly items-center bg-[#022c43] overflow-y-auto px-[5%] py-0">
+    <section className="w-full min-h-screen h-auto flex flex-col md:flex-row justify-center md:justify-evenly items-start md:items-center overflow-y-auto px-5 md:px-[5%] py-10 md:py-0">
       <BlurryNavBar />
-      <div className="w-1/2">
+      <div className="w-full md:w-1/2 mb-8 md:mb-0">
         <TitleEffect className="mb-2" h1="" title="Hi," />
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <TitleEffect h1="" title="I'm" />
           <TitleEffect h1="" title="Mamun" />
           <TitleEffect h1="" title="Ahmed," />
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <TitleEffect h1="" title="Web" />
           <TitleEffect h1="" title="developer" />
         </div>
@@ -30,10 +30,10 @@ const Home = () => {
           <span className="tracking-widest"> contact me</span> <SendHorizontal size={16} />
         </Button>
       </div>
-      <div className="w-1/2">
-        <div className="right_side_logo">
+      <div className="w-full md:w-1/2 flex justify-center items-center">
+        <div className="right_side_logo w-64 h-64 md:w-96 md:h-96">
           <Image
-            className="w-full h-full"
+            className="w-full h-full object-contain"
             src={images.logo}
             alt="logo"
             width={400}

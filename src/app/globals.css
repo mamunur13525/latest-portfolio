@@ -42,7 +42,7 @@ body {
 }
 
 .heading_helper_text {
-  @apply text-[#947f0a] text-[1.3rem] font-normal;
+  @apply text-[#01fce8] text-[1.3rem] font-normal;
 }
 
 p.about_text {
@@ -50,7 +50,7 @@ p.about_text {
 }
 
 .skill_name {
-  @apply text-[#f1c40f] font-medium mr-[0.8rem];
+  @apply text-[#01fce8] font-medium mr-[0.8rem];
 }
 
 
@@ -60,12 +60,12 @@ input.input_form, textarea.input_form {
 
 
 .blast {
-  color: orange;
+  color: #01fce8;
   cursor: default;
 }
 
 .rabber_band:hover {
-  color: white;
+  color: #fd3147;
 }
 
 .rabber_band {

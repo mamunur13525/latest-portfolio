@@ -21,7 +21,7 @@ const Button = ({
       disabled={loading}
       onClick={onClick}
       className={twMerge(
-        `border border-[#c9ab04] text-[#c9ab04] py-1.5 px-7 uppercase hover:rounded-3xl ease-in-out rounded-none transition-all duration-500 hover:bg-[#c9ab04] hover:text-black cursor-pointer flex items-center group gap-2 hover:gap-6`,
+        `border border-[#01fce8] text-[#01fce8] py-1.5 px-7 uppercase hover:rounded-3xl ease-in-out rounded-none transition-all duration-500 hover:bg-[#01fce8] hover:text-black cursor-pointer flex items-center group gap-2 hover:gap-6`,
         className
       )}
       type={type || "button"}

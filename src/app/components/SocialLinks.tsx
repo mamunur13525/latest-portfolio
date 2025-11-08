@@ -10,7 +10,7 @@ const SocialLinks = () => {
         rel="noreferrer"
       >
         <Github
-          className="text-[#c9ab04] hover:text-white duration-300 cursor-pointer"
+          className="text-[#04fde8] hover:text-[#fd3247] duration-300 cursor-pointer"
           size={16}
         />
       </Link>
@@ -20,21 +20,21 @@ const SocialLinks = () => {
         target="_blank"
       >
         <Linkedin
-          className="text-[#c9ab04] hover:text-white duration-300 cursor-pointer"
+          className="text-[#04fde8] hover:text-[#fd3247] duration-300 cursor-pointer"
           size={16}
         />
       </Link>
 
       <Link rel="noreferrer" target="_blank" href="https://x.com/Mamun13525">
         <Twitter
-          className="text-[#c9ab04] hover:text-white duration-300 cursor-pointer"
+          className="text-[#04fde8] hover:text-[#fd3247] duration-300 cursor-pointer"
           size={16}
         />
       </Link>
 
       <Link href="">
         <Youtube
-          className="text-[#c9ab04] hover:text-white duration-300 cursor-pointer"
+          className="text-[#04fde8] hover:text-[#fd3247] duration-300 cursor-pointer"
           size={16}
         />
       </Link>

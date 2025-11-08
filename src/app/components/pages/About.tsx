@@ -2,7 +2,7 @@ import TitleEffect from "../TitleEffect";
 
 const About = () => {
   return (
-    <div className="w-full min-h-screen h-screen flex justify-evenly items-center bg-[#022c43] overflow-y-auto px-[5%] py-0 about">
+    <div className="w-full min-h-screen h-screen flex justify-evenly items-center overflow-y-auto px-[5%] py-0 about">
       <div className="left_side">
         {/* <p className="h1_tag mt-5">&lt;h1&gt;</p> */}
         <TitleEffect

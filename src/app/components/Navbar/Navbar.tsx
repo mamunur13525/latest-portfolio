@@ -32,7 +32,7 @@ const BlurryNavBar = () => {
   return (
     <>
       <nav
-        className={`font-popping fixed top-6 left-1/2 transform -translate-x-1/2 z-50 px-8 md:px-6 py-3 w-11/12 lg:max-w-[1000px] shadow-2xl shadow-indigo-900/50 bg-[#ffa500]/5 backdrop-blur-3xl border border-[#ffa500]/10 transition-all duration-300 ${
+        className={`font-popping fixed top-6 left-1/2 transform -translate-x-1/2 z-50 px-8 md:px-6 py-3 w-11/12 lg:max-w-[1000px] shadow-2xl shadow-indigo-900/50 bg-[#01fce8]/5 backdrop-blur-3xl border border-[#01fce8]/10 transition-all duration-300 ${
           open ? "rounded-none" : "rounded-full"
         }`}
       >
@@ -164,7 +164,7 @@ const BlurryNavBar = () => {
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="w-full block text-white group-hover:text-[#ffa500] duration-300 text-2xl font-medium px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
+                  className="w-full block text-white group-hover:text-[#01fce8] duration-300 text-2xl font-medium px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
                 >
                   {item.name}
                 </a>

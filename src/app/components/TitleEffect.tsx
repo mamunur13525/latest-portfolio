@@ -21,7 +21,7 @@ const TitleEffect = ({ className = "", title = "", h1 = "" }: Props) => {
   };
 
   return (
-    <h1 className={twMerge(`main_heading_title flex items-end`, className)}>
+    <h1 className={twMerge(`main_heading_title flex flex-wrap items-end`, className)}>
       {title.split("").map((item, index) => (
         <span
           key={item + index}

@@ -16,7 +16,7 @@ const InputField: React.FC<InputFieldProps> = ({ type, ...rest }) => {
 
   return (
     <div
-      className={`relative w-full pb-0 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-full after:bg-[#ffa500] after:transition-all after:duration-300 ${
+      className={`relative w-full pb-0 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:rounded-full after:bg-[#01fce8] after:transition-all after:duration-300 ${
         focused || hasValue ? "after:w-full" : "after:w-0"
       }`}
     >

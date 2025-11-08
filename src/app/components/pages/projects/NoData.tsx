@@ -1,6 +1,10 @@
 "use client";
 
-const NoData = () => {
+type Props = {
+  onReset?: () => void;
+};
+
+const NoData = ({ onReset }: Props) => {
   return (
     <div className="w-full flex justify-center">
       <div
@@ -11,9 +15,15 @@ const NoData = () => {
         }}
       >
         <div className="flex flex-col items-center gap-4">
-       
           <h4 className="text-white text-xl font-bold">No Projects Found</h4>
-         
+          {onReset ? (
+            <button
+              onClick={onReset}
+              className="mt-2 px-4 py-2 bg-[#ff6a00] text-white rounded-md"
+            >
+              Show All
+            </button>
+          ) : null}
         </div>
       </div>
     </div>
